@@ -1,8 +1,12 @@
 package com.tq.rxjavademos.fragment;
 
 
+
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +22,20 @@ import rx.Subscription;
 public abstract class BaseFragment extends Fragment {
     protected Subscription subscription;
 
-//    @OnClick(R.id.tipBt)
-//    void tip(){
-//
-//    }
+    @OnClick(R.id.tipBt)
+    void tip(){
+
+               new  AlertDialog.Builder(getActivity())
+                .setTitle(getTitleRes())
+                .setView(getActivity().getLayoutInflater().inflate(getDialogRes(),null))
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
 
     @Override
     public void onDestroy() {

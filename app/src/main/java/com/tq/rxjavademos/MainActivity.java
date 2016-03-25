@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
-
             @Override
             public Fragment getItem(int position) {
                 BaseFragment baseFragment=null;
