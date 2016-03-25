@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RxJavaDemos</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_elementary">基本</string>
+    <string name="title_map">转换(map)</string>
+    <string name="title_zip">压合(zip)</string>
+    <string name="title_token">Token(flatMap)</string>
+    <string name="title_token_advanced">Token_高级(retryWhen)</string>
+    <string name="title_cache">缓存(BehaviorSubject)</string>
+
+
+
 </resources>
