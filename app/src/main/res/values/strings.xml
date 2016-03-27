@@ -43,4 +43,11 @@
     <string name="api_source_rengwuxian">* 由于找不到足够简单的用于示例的 token API，本页 Sample 使用的 API 是<b>我用代码伪造的</b></string>
 
 
+    <!-- TokenAdvanceFragment-->
+    <string name="invalidate_token">销毁token</string>
+    <string name="dialog_token_advanced">有的 token 并非一次性的，而是可以多次使用，直到它超时或被销毁（多数 token 都是这样的）。这样的 token 处理起来比较麻烦：需要把它保存起来，并且在发现它失效的时候要能够自动重新获取新的 token 并继续访问之前由于 token 失效而失败的请求。如果项目中有多处的接口请求都需要这样的自动修复机制，使用传统的 Callback 形式需要写出非常复杂的代码。而使用 RxJava ，可以用 retryWhen() 来轻松地处理这样的问题。代码大致形式：\n\napi<b>.getData(token)\n&#160;&#160;&#160;&#160;.retryWhen(observable ->\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;observable.flatMap( ->\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;api.getToken()\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.doOnNext(->updateToken())))</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)</string>
+    <string name="token_destroyed">Token已销毁</string>
+    <string name="updated">已更新</string>
+    <string name="got_token_and_data">token:%1$s\n\n获取到的数据：\nID：%2$d\n用户名：%3$s</string>
+
 </resources>
