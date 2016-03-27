@@ -7,7 +7,7 @@ package com.tq.rxjavademos.model;
  */
 public class GankBeauty {
 
-    public String createAt;
+    public String createdAt;
     public String url;
 
 }

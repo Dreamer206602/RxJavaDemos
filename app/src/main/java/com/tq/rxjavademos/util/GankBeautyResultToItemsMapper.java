@@ -36,7 +36,7 @@ public class GankBeautyResultToItemsMapper implements Func1<GankBeautyResult,Lis
         for(GankBeauty gankBeauty:gankBeauties){
             Item item=new Item();
             try {
-                Date date=inputFormat.parse(gankBeauty.createAt);
+                Date date=inputFormat.parse(gankBeauty.createdAt);
                 item.description=outputFormat.format(date);
             } catch (ParseException e) {
                 e.printStackTrace();

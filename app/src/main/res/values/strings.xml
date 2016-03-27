@@ -29,4 +29,11 @@
     <string name="api_source_gank">* 本页 Sample 使用的 API 来自 <b>干货集中营</b> gank.io</string>
 
 
+
+    <!-- ZipFragment-->
+    <string name="load">加载</string>
+    <string name="api_source_zhuangbi_and_gank">* 本页 Sample 使用的 API 来自 <b>装逼大全</b> zhuangbi.info 和 <b>干货集中营</b> gank.io</string>
+    <string name="dialog_zip">有的时候，app 中会需要同时访问不同接口，然后将结果糅合后转为统一的格式后输出（例如将第三方广告 API 的广告夹杂进自家平台返回的数据 List 中）。这种并行的异步处理比较麻烦，不过用了 zip() 之后就会简单得多。代码大致形式：\n\n<b>Observable.zip(api.getData(),\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;adApi.getAds(), zipFunc())</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)</string>
+
+
 </resources>
