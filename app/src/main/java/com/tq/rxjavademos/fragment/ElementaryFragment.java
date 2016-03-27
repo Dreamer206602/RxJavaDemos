@@ -89,7 +89,6 @@ public class ElementaryFragment extends BaseFragment {
                 .search(key)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                //.subscrible(observer);
                  .subscribe(observer);
     }
 
