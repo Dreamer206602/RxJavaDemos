@@ -34,6 +34,13 @@
     <string name="load">加载</string>
     <string name="api_source_zhuangbi_and_gank">* 本页 Sample 使用的 API 来自 <b>装逼大全</b> zhuangbi.info 和 <b>干货集中营</b> gank.io</string>
     <string name="dialog_zip">有的时候，app 中会需要同时访问不同接口，然后将结果糅合后转为统一的格式后输出（例如将第三方广告 API 的广告夹杂进自家平台返回的数据 List 中）。这种并行的异步处理比较麻烦，不过用了 zip() 之后就会简单得多。代码大致形式：\n\n<b>Observable.zip(api.getData(),\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;adApi.getAds(), zipFunc())</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)</string>
+    <string name="request_data">请求数据</string>
+
+
+    <!-- TokenFragment-->
+    <string name="got_data">获取到的数据：\nID：%1$d\n用户名：%2$s</string>
+    <string name="dialog_token">出于安全性、性能等方面的考虑，多数服务器会有一些接口需要传入 token 才能正确返回结果，而 token 是需要从另一个接口获取的，这就需要使用两步连续的请求才能获取数据（①token -> ②目标数据）。使用 flatMap() 可以用较为清晰的代码实现这种连续请求，避免 Callback 嵌套的结构。代码大致形式：\n\napi<b>.getToken()\n&#160;&#160;&#160;&#160;.flatMap(token -> api.getData(token))</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)</string>
+    <string name="api_source_rengwuxian">* 由于找不到足够简单的用于示例的 token API，本页 Sample 使用的 API 是<b>我用代码伪造的</b></string>
 
 
 </resources>

@@ -1,6 +1,7 @@
 package com.tq.rxjavademos.network;
 
 import com.squareup.okhttp.OkHttpClient;
+import com.tq.rxjavademos.network.api.FakeApi;
 import com.tq.rxjavademos.network.api.GankApi;
 import com.tq.rxjavademos.network.api.ZhuangbiApi;
 
@@ -17,10 +18,13 @@ import retrofit.RxJavaCallAdapterFactory;
 public class NetWork {
     private static ZhuangbiApi zhuangbiApi;
     private static GankApi gankApi;
+    private   static FakeApi fakeApi;
+
 
     private static OkHttpClient okHttpClient=new OkHttpClient();
     private static Converter.Factory gsonConverterFactory= GsonConverterFactory.create();
     private static CallAdapter.Factory rxJavaCallAdapterFactory= RxJavaCallAdapterFactory.create();
+
 
 
     public static ZhuangbiApi getZhuangbiApi(){
@@ -48,5 +52,12 @@ public class NetWork {
             gankApi=retrofit.create(GankApi.class);
         }
         return gankApi;
+    }
+
+    public static FakeApi getFakeApi() {
+        if (fakeApi == null) {
+            fakeApi=new FakeApi();
+        }
+        return fakeApi;
     }
 }
