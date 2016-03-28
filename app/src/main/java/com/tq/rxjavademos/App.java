@@ -9,14 +9,13 @@ import android.app.Application;
 public class App extends Application {
     private volatile static  App instance;
     public static App getInstance(){
-        if (instance == null) {
-            synchronized (App.class){
-                if (instance==null){
-                    instance=new App();
-                }
-            }
-        }
+
         return instance;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        instance=this;
+    }
 }

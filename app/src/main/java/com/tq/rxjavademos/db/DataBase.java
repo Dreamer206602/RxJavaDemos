@@ -46,23 +46,20 @@ public class DataBase {
     }
 
 
-    public void writeItems(List<Item>items){
-        String json=gson.toJson(items);
+    public void writeItems(List<Item>items) {
+        String json = gson.toJson(items);
 
 
-            try {
-                if(!dataFile.exists()) {
-                    dataFile.createNewFile();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         try {
-            Writer writer=new FileWriter(dataFile);
+            if (!dataFile.exists()) {
+                dataFile.createNewFile();
+            }
+            Writer writer = new FileWriter(dataFile);
             writer.write(json);
             writer.flush();
         } catch (IOException e) {
             e.printStackTrace();
+
         }
     }
 
